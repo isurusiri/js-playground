@@ -15,3 +15,14 @@ const app = Vue.createApp();
 ```
 app.mount('#user-goal');
 ```
+
+- As long as the data function is returning an object with properties, those properties can be interpolated in the HTML code.
+- Interpolation in HTML code is done using `{{ <PROPERTY> }}` syntax.
+- Interpolation will only be working inside the HTML block that has been mounted in the Vue app.
+
+```
+<section id="user-goal">
+  <h2>My Course Goal</h2>
+  <p>{{ courseGoal }}</p>
+</section>
+```
