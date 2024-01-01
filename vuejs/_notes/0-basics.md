@@ -56,3 +56,30 @@ methods: {
 ```
 <p>{{ outputGoal() }}</p>
 ```
+
+- Further more, it is possible to refer properties defined in the `data` block inside the functions of `methods` property.
+- Vue will perform a transpilation and merge `data` and `methods` into a common JavaScript context.
+- This allows to access properties of `data` inside `methods` using `this` object.
+
+```
+...
+data() {
+    return {
+      courseGoalA: "Finish the course and learn Vue!",
+      courseGoalB: "Master Vue and build amazing apps!",
+      vueLink: "https://vuejs.org",
+    };
+  },
+...
+methods: {
+    outputGoal() {
+      const randomNumber = Math.random();
+      if (randomNumber < 0.5) {
+        return this.courseGoalA;
+      } else {
+        return this.courseGoalB;
+      }
+    },
+  },
+...
+```
