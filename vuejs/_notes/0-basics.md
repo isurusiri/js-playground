@@ -26,3 +26,9 @@ app.mount('#user-goal');
   <p>{{ courseGoal }}</p>
 </section>
 ```
+
+- Interpolation work within the scope of an open and closing HTML tags. If it is required to bind a value defined in the vue context with HTML attributes a binding attribute called `v-bind` can be used for this.
+
+```
+  <p>Learn more <a v-bind:href="<VALUE>">about Vue.</a></p>
+```
