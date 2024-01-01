@@ -32,3 +32,27 @@ app.mount('#user-goal');
 ```
   <p>Learn more <a v-bind:href="<VALUE>">about Vue.</a></p>
 ```
+
+- Similar to `data` property, Vue has another property that allows to declare functions to be used within the Vue context.
+- This property is called `methods` and it accepts an object containing all function declarations.
+
+```
+...
+methods: {
+    outputGoal() {
+      const randomNumber = Math.random();
+      if (randomNumber < 0.5) {
+        return "Learn Vue.";
+      } else {
+        return "Master Vue.";
+      }
+    },
+  },
+...
+```
+
+- Functions declared in the `methods` property can be directly called from the Vue context in the HTML code.
+
+```
+<p>{{ outputGoal() }}</p>
+```
