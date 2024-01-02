@@ -83,3 +83,19 @@ methods: {
   },
 ...
 ```
+
+- Another directive available in Vue is `v-binding`. This can be used to bind HTML code generated in JavaScript.
+
+```
+...
+data() {
+    return {
+      courseGoalB: "<h2>Master Vue and build amazing apps!</h2>",
+    };
+  }
+...
+<p v-html="outputGoal()"></p>
+...
+```
+
+- However, this approach is more error prone due to the potential of cross site scripting compated to `{{ }}`.
