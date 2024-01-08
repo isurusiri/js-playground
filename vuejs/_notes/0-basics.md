@@ -99,3 +99,21 @@ data() {
 ```
 
 - However, this approach is more error prone due to the potential of cross site scripting compated to `{{ }}`.
+- Vue also allows us to capture event updates and reflect them on the user interface.
+
+```
+...
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+...
+  <section id="events">
+    <h2>Events in Action</h2>
+    <button v-on:click="counter++">Add</button>
+    <button v-on:click="counter--">Remove</button>
+    <p>Result: {{ counter }}</p>
+  </section>
+...
+```
